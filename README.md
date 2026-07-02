@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 #group 5 is the bestt
  # AI 4 Africa Workshop Starter Repo: Group 5
+=======
+# AI 4 Africa Workshop Starter Repo: Group 5
+# Hey this is Alberts message 
+# and now albert is writing a message again
+# and i am committing again
+>>>>>>> a4e0c4de66f72af9d9299931659ebee1ad93a792
 
 <p align="center">
   <a href="https://github.com/AI4Africa-MBZUAI-ALA/github_tutorial/fork">
