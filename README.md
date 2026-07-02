@@ -1,4 +1,4 @@
-# AI 4 Africa Workshop Starter Repo: Group 5
+# AI 4 Africa Workshop Starter Repo: Group 5 we will win this
 
 <p align="center">
   <a href="https://github.com/AI4Africa-MBZUAI-ALA/github_tutorial/fork">
