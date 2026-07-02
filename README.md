@@ -79,6 +79,8 @@ broken.
 
 Before coding, every group should create a virtual environment.
 
+Always work inside that virtual environment. Do not skip it.
+
 Why this matters:
 
 - it keeps the workshop tools separate from your computer’s global Python
@@ -106,6 +108,8 @@ If your terminal uses a different shell, use the equivalent activation command
 for that shell.
 
 Every time you add a package, update `requirements.txt`.
+
+Always update `requirements.txt` whenever you add a new library.
 
 Why this matters:
 
@@ -136,6 +140,25 @@ python -m pip install pandas
 
 This project expects you to create the virtual environment first, then install
 the required packages, and only then start vibecoding.
+
+## 📝 Notes For Claude
+
+When Claude helps generate or revise code for this repo, keep these reminders
+in mind:
+
+- Always assume the student is working inside the `venv`.
+- Keep the model simple, but avoid pure lookup-table solutions.
+- Prefer a small real model when possible, like a basic regression model or a
+  tiny neural network.
+- If new libraries are used, update `requirements.txt` right away.
+- When the work is finished, include the Streamlit check command so the app can
+  be tested locally.
+
+Example final app check:
+
+```bash
+streamlit run to_complete/06_streamlit_app.py
+```
 
 ## 🔁 Suggested Group Flow
 
