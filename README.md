@@ -1,6 +1,6 @@
 # AI 4 Africa Workshop Starter Repo
 
-I am Nico
+I am Bilal
 
 <p align="center">
   <a href="https://github.com/AI4Africa-MBZUAI-ALA/github_tutorial/fork">
