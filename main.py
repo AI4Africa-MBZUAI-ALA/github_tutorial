@@ -1,14 +1,18 @@
 from __future__ import annotations
 
-import importlib
+import importlib.util
+from pathlib import Path
 import sys
 from typing import Any, Callable, Dict, List
+
+
+BASE_DIR = Path(__file__).resolve().parent
 
 
 STEP_SPECS = [
     {
         "label": "Data fetching",
-        "module": "data_fetch",
+        "file_path": "to_complete/01_data_fetch.py",
         "function": "fetch_event_data",
         "sample_input": {
             "dataset_name": "school_garden_water_need",
@@ -19,7 +23,7 @@ STEP_SPECS = [
     },
     {
         "label": "Preprocessing",
-        "module": "preprocess",
+        "file_path": "to_complete/02_preprocess.py",
         "function": "preprocess_event_data",
         "sample_input": {
             "dataset_name": "school_garden_water_need",
@@ -58,7 +62,7 @@ STEP_SPECS = [
     },
     {
         "label": "Training",
-        "module": "train",
+        "file_path": "to_complete/03_train.py",
         "function": "train_model",
         "sample_input": {
             "dataset_name": "school_garden_water_need",
@@ -100,7 +104,7 @@ STEP_SPECS = [
     },
     {
         "label": "Evaluation",
-        "module": "evaluate",
+        "file_path": "to_complete/04_evaluate.py",
         "function": "evaluate_model",
         "sample_input": {
             "dataset_name": "school_garden_water_need",
@@ -134,7 +138,7 @@ STEP_SPECS = [
     },
     {
         "label": "Visualization",
-        "module": "visualize",
+        "file_path": "to_complete/05_visualize.py",
         "function": "create_visual_report",
         "sample_input": {
             "dataset_name": "school_garden_water_need",
@@ -149,7 +153,7 @@ STEP_SPECS = [
     },
     {
         "label": "Streamlit dashboard",
-        "module": "streamlit_app",
+        "file_path": "to_complete/06_streamlit_app.py",
         "function": "build_streamlit_dashboard",
         "sample_input": {
             "dataset_name": "school_garden_water_need",
@@ -167,8 +171,18 @@ STEP_SPECS = [
 ]
 
 
-def load_step(module_name: str, function_name: str) -> Callable[[Dict[str, Any]], Any]:
-    module = importlib.import_module(module_name)
+def load_step(file_path: str, function_name: str) -> Callable[[Dict[str, Any]], Any]:
+    full_path = BASE_DIR / file_path
+    if not full_path.exists():
+        raise ModuleNotFoundError(f"Could not load step file at {full_path}")
+
+    module_name = f"step_{full_path.stem.replace('-', '_')}"
+    spec = importlib.util.spec_from_file_location(module_name, full_path)
+    if spec is None or spec.loader is None:
+        raise ModuleNotFoundError(f"Could not load step file at {full_path}")
+
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
     function = getattr(module, function_name)
     return function
 
@@ -188,21 +202,21 @@ def validate_output(step_label: str, output: Any, required_keys: List[str]) -> L
 def smoke_test_step(step_spec: Dict[str, Any]) -> Dict[str, Any]:
     result: Dict[str, Any] = {
         "label": step_spec["label"],
-        "module": step_spec["module"],
+        "file_path": step_spec["file_path"],
         "function": step_spec["function"],
         "status": "not run",
         "details": "",
     }
 
     try:
-        step_fn = load_step(step_spec["module"], step_spec["function"])
+        step_fn = load_step(step_spec["file_path"], step_spec["function"])
     except ModuleNotFoundError:
         result["status"] = "missing"
-        result["details"] = f"module {step_spec['module']} could not be imported"
+        result["details"] = f"file {step_spec['file_path']} could not be imported"
         return result
     except AttributeError:
         result["status"] = "missing"
-        result["details"] = f"function {step_spec['function']} was not found in {step_spec['module']}"
+        result["details"] = f"function {step_spec['function']} was not found in {step_spec['file_path']}"
         return result
 
     try:

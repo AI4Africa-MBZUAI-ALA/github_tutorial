@@ -1,5 +1,11 @@
 # AI 4 Africa Workshop Starter Repo
 
+<p align="center">
+  <a href="https://github.com/AI4Africa-MBZUAI-ALA/github_tutorial/fork">
+    <img src="https://img.shields.io/badge/Fork%20this%20repo-Start%20here-brightgreen?style=for-the-badge" alt="Fork this repo" />
+  </a>
+</p>
+
 🚀 Welcome to the starter repo for the AI 4 Africa workshop.
 
 This repository is designed for beginners. It teaches collaboration first and
@@ -48,14 +54,15 @@ This is the collaboration pattern we want students to practice:
 
 ## 🧩 Repo Structure
 
-Each file is the responsibility of one group member:
+The workshop files live in `to_complete/` and are numbered so students can
+identify them quickly.
 
-- `data_fetch.py` - create or load the synthetic raw records
-- `preprocess.py` - clean the records and split them into train/test sets
-- `train.py` - train a simple model
-- `evaluate.py` - score the model and create metrics
-- `visualize.py` - build plots and save them to disk
-- `streamlit_app.py` - prepare the interactive dashboard payload
+- `to_complete/01_data_fetch.py` - create or load the synthetic raw records
+- `to_complete/02_preprocess.py` - clean the records and split them into train/test sets
+- `to_complete/03_train.py` - train a simple model
+- `to_complete/04_evaluate.py` - score the model and create metrics
+- `to_complete/05_visualize.py` - build plots and save them to disk
+- `to_complete/06_streamlit_app.py` - prepare the interactive dashboard payload
 
 `main.py` connects everything and reports which step is missing, stubbed, or
 broken.
@@ -119,12 +126,12 @@ package.
 
 If the group has 6 people:
 
-1. One person builds `data_fetch.py`
-2. One person builds `preprocess.py`
-3. One person builds `train.py`
-4. One person builds `evaluate.py`
-5. One person builds `visualize.py`
-6. One person builds `streamlit_app.py`
+1. One person builds `to_complete/01_data_fetch.py`
+2. One person builds `to_complete/02_preprocess.py`
+3. One person builds `to_complete/03_train.py`
+4. One person builds `to_complete/04_evaluate.py`
+5. One person builds `to_complete/05_visualize.py`
+6. One person builds `to_complete/06_streamlit_app.py`
 
 If the group has 4 people:
 
