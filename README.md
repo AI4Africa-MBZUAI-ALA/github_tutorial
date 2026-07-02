@@ -1,4 +1,5 @@
-# AI 4 Africa Workshop Starter Repo: Group 5
+#group 5 is the bestt
+ # AI 4 Africa Workshop Starter Repo: Group 5
 
 <p align="center">
   <a href="https://github.com/AI4Africa-MBZUAI-ALA/github_tutorial/fork">
