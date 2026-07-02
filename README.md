@@ -1,4 +1,4 @@
-# AI 4 Africa Workshop Starter Repo
+# AI 4 Africa Workshop Starter Repo: Group 5
 
 <p align="center">
   <a href="https://github.com/AI4Africa-MBZUAI-ALA/github_tutorial/fork">
