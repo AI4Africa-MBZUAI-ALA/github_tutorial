@@ -1,0 +1,6 @@
+# Basic workshop packages
+numpy
+pandas
+matplotlib
+scikit-learn
+streamlit
