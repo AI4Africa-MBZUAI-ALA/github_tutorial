@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # AI 4 Africa Workshop Starter Repo: Group 5 we will win this
+=======
+# AI 4 Africa Workshop Starter Repo: Group 5
+#Hey this is Alberts message 
+>>>>>>> 4ed86bddda0c54d455899efd688a89fad2844f8d
 
 <p align="center">
   <a href="https://github.com/AI4Africa-MBZUAI-ALA/github_tutorial/fork">
