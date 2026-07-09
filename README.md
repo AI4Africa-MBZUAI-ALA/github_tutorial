@@ -1,4 +1,12 @@
-# AI 4 Africa Workshop Starter Repo
+# AI 4 Africa Workshop Starter Repo: Group 5
+<<<<<<< HEAD
+# Hey this is Alberts message 
+>>>>>>> 4ed86bddda0c54d455899efd688a89fad2844f8d
+=======
+# Hey this is Alberts message 
+# and now albert is writing a message again
+# and i am committing again
+>>>>>>> a4e0c4de66f72af9d9299931659ebee1ad93a792
 
 <p align="center">
   <a href="https://github.com/AI4Africa-MBZUAI-ALA/github_tutorial/fork">
